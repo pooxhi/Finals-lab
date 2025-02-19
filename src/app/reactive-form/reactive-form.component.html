@@ -1,1 +1,44 @@
-<p>reactive-form works!</p>
+<div class="container min-vh-100 d-flex justify-content-center align-items-center">
+    <div class="card bg-black" style="width: 100%; max-width: 500px; padding: 2rem;">
+      <form [formGroup]="formdata" (ngSubmit)="onClickSubmit(formdata.value)">
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <div class="form-group">
+              <label for="firstName">First Name <span class="text-danger">*</span></label>
+              <input type="text" id="firstName" formControlName="firstName" required autocomplete="off" class="form-control" name="firstName" />
+            </div>
+          </div>
+  
+          <div class="col-md-6 mb-3">
+            <div class="form-group">
+              <label for="lastName">Last Name <span class="text-danger">*</span></label>
+              <input type="text" id="lastName" formControlName="lastName" class="form-control" required autocomplete="off" name="lastName" />
+            </div>
+          </div>
+        </div>
+  
+        <div class="mb-3">
+          <div class="form-group">
+            <label for="email">Email Address <span class="text-danger">*</span></label>
+            <input type="email" id="email" formControlName="email" class="form-control" required autocomplete="off" name="email" />
+          </div>
+        </div>
+  
+        <div class="mb-3">
+          <div class="form-group">
+            <label for="password">Set A Password <span class="text-danger">*</span></label>
+            <input type="password" id="password" formControlName="password" class="form-control" required autocomplete="off" name="password" />
+          </div>
+        </div>
+  
+        <p>You have entered:</p>
+        <p>First Name: {{ firstName }}</p>
+        <p>Last Name: {{ lastName }}</p>
+        <p>Email: {{ email }}</p>
+        <p>Password: {{ password }}</p>
+  
+        <button type="submit" class="btn btn-primary btn-block">Get Started</button>
+      </form>
+    </div>
+  </div>
+  
