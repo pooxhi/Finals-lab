@@ -1,0 +1,39 @@
+<div class="container min-vh-100 d-flex justify-content-center align-items-center">
+    <div class="card bg-black" style="width: 100%; max-width: 500px; padding: 2rem;">
+      <form (ngSubmit)="onSubmit()">
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <div class="form-group">
+              <label for="firstName">First Name <span class="text-danger">*</span></label>
+              <input type="text" id="firstName" class="form-control" required autocomplete="off" [(ngModel)]="firstName" name="firstName"/>
+            </div>
+          </div>
+          
+          <div class="col-md-6 mb-3">
+            <div class="form-group">
+              <label for="lastName">Last Name <span class="text-danger">*</span></label>
+              <input type="text" id="lastName" class="form-control" required autocomplete="off" [(ngModel)]="lastName" name="lastName"/>
+            </div>
+          </div>
+        </div>
+      
+        <div class="mb-3">
+          <div class="form-group">
+            <label for="email">Email Address <span class="text-danger">*</span></label>
+            <input type="email" id="email" class="form-control" required autocomplete="off" [(ngModel)]="email" name="email"/>
+          </div>
+        </div>
+      
+        <div class="mb-3">
+          <div class="form-group">
+            <label for="password">Set A Password <span class="text-danger">*</span></label>
+            <input type="password" id="password" class="form-control" required autocomplete="off" [(ngModel)]="password" name="password"/>
+          </div>
+        </div>
+        
+        <p *ngIf="submitted">You have entered: First Name: {{ firstName }}, Last Name: {{ lastName }}, Email: {{ email }}, Password: {{ password }}</p>
+        <button type="submit" class="btn btn-primary btn-block">Get Started</button>
+      </form>
+    </div>
+  </div>
+  
